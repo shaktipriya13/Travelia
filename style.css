@@ -78,33 +78,38 @@
 /* RESET the browser to default style */
 *,
 *::before,
-*::after{
-    margin:0;
-    padding:0;
+*::after {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-li {list-style:none;}
+li {
+    list-style: none;
+}
 
 a,
 img,
 span,
 input,
 button,
-ion-icon {display: block;}
+ion-icon {
+    display: block;
+}
+
 /* By default, most of these elements are inline or inline-block because they are designed to flow naturally with text. However, in modern layouts, especially when designing for responsive UIs, you may want to make them block for:
 
 Block elements can have predictable behaviors (e.g., they occupy the full width of their container). 
 
 For example, in navigation menus or forms, you may want these elements to stack vertically, and block makes that easier.*/
 
-a{
+a {
     color: inherit;
     /* Ensures the link (<a>) inherits the color of its parent element instead of default blue. */
     text-decoration: none;
 }
 
-img{
+img {
     height: auto;
     /* The height: auto; in CSS is used to make the height of an element adjust automatically based on its content.
     
@@ -112,43 +117,52 @@ img{
 }
 
 input,
-button{
+button {
     background: none;
     border: none;
     font: inherit;
 }
 
-input{
+input {
     width: 100%;
     outline: none;
 }
 
-button {cursor: pointer;}
+button {
+    cursor: pointer;
+}
 
-ion-icon {pointer-events: none;}
+ion-icon {
+    pointer-events: none;
+}
 
-address {font-style: normal;}
+address {
+    font-style: normal;
+}
+
 /* by default addr ka font style is italic */
 
-html{
+html {
     font-family: var(--ff-poppins);
     font-size: 10px;
     scroll-behavior: smooth;
     /* Instead of a jarring "jump" to the target, it scrolls smoothly. */
 }
 
-body{
+body {
     background-color: var(--bg-lavender-blush);
-    color:var(--text-granite-gray);
+    color: var(--text-granite-gray);
     font-size: var(--fontSize-6);
     line-height: 1.8;
 }
 
 
 /* REUSED STYLE  */
-.container{padding-inline: 16px;}
+.container {
+    padding-inline: 16px;
+}
 
-.btn{
+.btn {
     height: 50px;
     color: var(--text-white);
     padding-inline: 30px;
@@ -161,60 +175,93 @@ body{
     transition: var(--transition-1);
 }
 
-.btn-primary {background-color: var(--bg-majorelle-blue);}
+.btn-primary {
+    background-color: var(--bg-majorelle-blue);
+}
 
-.btn-primary:is(:hover,:focus-visible){
+.btn-primary:is(:hover, :focus-visible) {
     background-color: var(--bg-ocean-blue);
     box-shadow: var(--shadow-2);
 }
+
 /* The :is() pseudo-class is used to group multiple selectors together.It allows you to apply a common style to several different states of an element without having to repeat the same rules.
 
 For example, when a user hovers over the .btn-primary button, the styles inside the rule will apply (like changing color or adding a shadow).
 
 The :focus-visible pseudo-class is used to apply styles when an element is focused (usually with keyboard navigation) and it should be visible.e.g., when the user navigates using a keyboard, not when clicking with the mouse*/
 
-.btn-secondary{ background-color: var(--bg-red-salsa);}
-.btn-secondary:is(:hover,:focus-visible){
+.btn-secondary {
+    background-color: var(--bg-red-salsa);
+}
+
+.btn-secondary:is(:hover, :focus-visible) {
     background-color: var(--bg-english-vermilion);
     box-shadow: var(--shadow-3);
 }
 
-.section {padding-block-end: var(--section-spacing);}
-.has-bg-image{
+.section {
+    padding-block-end: var(--section-spacing);
+}
+
+.has-bg-image {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
-.title{
+
+.title {
     color: var(--text-gunmetal);
     font-weight: var(--weight-semiBold);
     line-height: 1.45;
 }
 
-.h1{
+.h1 {
     font-size: var(--fontSize-1);
     line-height: 1.2;
 }
-.h2{
+
+.h2 {
     font-size: var(--fontSize-2);
-    
+
 }
-.h3{
+
+.h3 {
     font-size: var(--fontSize-4);
 }
-.img-cover{
+
+.img-cover {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: var(--transition-2);
 }
 
-.w-100{
+.w-100 {
     width: 100%;
 }
 
+.section-subtitle {
+    color: var(--bg-majorelle-blue);
+    font-weight: var(--weight-medium);
+    text-transform: uppercase;
+}
+
+.section-title {
+    margin-block: 10px;
+}
+
+.img-holder{
+    /* This property sets the ratio between an element's width and height, ensuring that the element maintains a consistent shape (like a rectangle or square) regardless of its size. */
+    aspect-ratio: var(--width)/var(--height);
+    /* we are using aspect ratio to avoid the layout shifting */
+    background-color: var(--bg-gainsboro);
+    overflow: hidden;
+    /* Agar content box ke size se zyada ho, toh overflow: hidden; ensure karega ki woh extra content dikhe hi na. Us content ko container ke andar hi "chhupa" diya jayega. */
+}
+
+
 /*  PRELOADER  */
-.preloader{
+.preloader {
     position: fixed;
     top: 0;
     left: 0;
@@ -228,30 +275,39 @@ The :focus-visible pseudo-class is used to apply styles when an element is focus
     transition: var(--transition-1);
 }
 
-.preloader.remove{
+.preloader.remove {
     visibility: hidden;
     opacity: 0;
 }
-.preloader.img{
+
+.preloader.img {
     animation: bounce 800ms ease-in-out infinite alternate;
 }
-@keyframes bounce{
-    0% {transform: translateY(-10px);}
-    100% {transform: translateY(0);}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
+
 /* This animation creates a simple bounce effect where the element:
 Moves up by 10 pixels at the start.
 Gradually returns to its original position.
 
 Keyframes in CSS define the intermediate steps in an animation, specifying how an element's properties should change at various points during the animation. They are used with the @keyframes rule to create smooth, step-by-step transitions between defined states over time.*/
 
-.preloader-inner{
+.preloader-inner {
     position: relative;
 }
-.preloader-inner::after{
+
+.preloader-inner::after {
     content: "";
     position: absolute;
-    bottom:-10px;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
     width: 80%;
@@ -267,23 +323,31 @@ Higher z-index = Element appears in front.
 Lower z-index = Element appears behind.
     */
 }
-@keyframes dropShadow{
-    0% {width: 40%;}
-    100% {width: 80%;}
+
+@keyframes dropShadow {
+    0% {
+        width: 40%;
+    }
+
+    100% {
+        width: 80%;
+    }
 }
 
 
 /* HEADER */
 
-.overlay {display: none;}
+.overlay {
+    display: none;
+}
 
-.header.container{
+.header.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.header{
+.header {
     padding-block: 30px;
     position: absolute;
     top: 0;
@@ -292,28 +356,38 @@ Lower z-index = Element appears behind.
     z-index: 4;
 }
 
-.header.active{
+.header.active {
     position: fixed;
     background-color: var(--bg-white);
     box-shadow: var(--shadow-1);
     animation: slideIn 500ms ease forwards;
 }
 
-@keyframes slideIn{
-    0% {transform: translateY(-100%);}
-    100% {transform: translateY(0);}
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
+
 /*
 @keyframes is used to define an animation sequence in CSS.
 The slideIn is the name of the animation.
 Inside @keyframes, you specify how an element should change its style over time.
 */
 
-.header .logo img {width: 160px;}
+.header .logo img {
+    width: 160px;
+}
 
-.nav-toggle-btn {font-size: 3.2rem;}
+.nav-toggle-btn {
+    font-size: 3.2rem;
+}
 
-.navbar{
+.navbar {
     position: fixed;
     top: 0;
     right: -350px;
@@ -334,14 +408,16 @@ Inside @keyframes, you specify how an element should change its style over time.
 
 
 /* HERO */
-.hero{
+.hero {
     padding-block-start: 150px;
 }
-.hero.container{
+
+.hero.container {
     display: grid;
     gap: 50px;
 }
-.hero-subtitle{
+
+.hero-subtitle {
     background-color: var(--bg-misty-rose);
     color: var(--text-light-coral);
     font-size: var(--fontSize-7);
@@ -353,17 +429,19 @@ Inside @keyframes, you specify how an element should change its style over time.
     border-radius: var(--radius-pill);
 }
 
-.hero-title{
+.hero-title {
     margin-block: 20px;
 }
-.hero-text{
+
+.hero-text {
     margin-block-end: 30px;
 }
 
-.hero.btn-secondary{
+.hero.btn-secondary {
     margin-block-end: 20px;
 
 }
+
 .hero-btn {
     color: var(--text-gunmetal);
     font-weight: var(--weight-medium);
@@ -371,17 +449,20 @@ Inside @keyframes, you specify how an element should change its style over time.
     align-items: center;
     gap: 30px;
     transition: var(--transition-1);
-  }
-  
-  .hero-btn .btn-img {
+}
+
+.hero-btn .btn-img {
     position: relative;
     width: 60px;
     height: 60px;
     background-color: var(--bg-gainsboro);
     border-radius: var(--radius-circle);
     box-shadow: var(--shadow-1);
-  }
-.hero-btn.img-cover{border-radius: inherit;}
+}
+
+.hero-btn.img-cover {
+    border-radius: inherit;
+}
 
 .hero-btn ion-icon {
     position: absolute;
@@ -392,9 +473,147 @@ Inside @keyframes, you specify how an element should change its style over time.
     padding: 10px;
     border-radius: var(--radius-circle);
     box-shadow: var(--shadow-1);
-  }
-  
-  .hero-btn:is(:hover, :focus-visible) {
+}
+
+.hero-btn:is(:hover, :focus-visible) {
     color: var(--text-majorelle-blue);
-  }
-  
+}
+
+
+/*  SERVICE */
+.service.container {
+    display: grid;
+    gap: 25px;
+}
+
+.service-card:nth-child(2) {
+    background-color: var(--bg-chrome-yellow-alpha-5);
+}
+
+.service-card:nth-child(3) {
+    background-color: var(--bg-chrome-yellow-alpha-5);
+}
+
+.service-card:nth-child(4) {
+    background-color: var(--bg-majorelle-blue-alpha-5);
+}
+
+.service-card{
+    padding: 25px 20px;
+    border-radius: var(--radius-20 );
+}
+.service-card.card-title{
+    margin-block: 10px 5px;
+    /* sets margin from top and bottom */
+}
+
+
+/* DESTINATION */
+.desti.section-title{
+    margin-block-end: 40px;
+}
+.desti-list{
+    display: grid;
+    gap: 30px;
+}
+.desti-card.card-banner{
+    position: relative;
+    /* 
+The CSS property position: relative; allows you to move an element relative to its normal position in the document flow. */
+    border-radius: var(--radius-30);
+}
+
+/* !following property helps to zoom in images when they are hovered */
+.desti-card:is(:hover,:focus-within).img-cover{transform: scale(1.05);}
+
+.desti-card.card-price{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--bg-white);
+    color: var(--text-majorelle-blue);
+    font-weight: var(--weight-bold);
+    font-size: 1.8rem;
+    line-height: 1.45;
+    padding: 5px 15px;
+    border-radius: var(--radius-pill);
+}
+.desti-card.card-title{
+    margin-block: 15px 5px;
+    transition: var(--transition-1);
+}
+.desti-card.card-title :is(:hover,:focus-visible){
+    color: var(--text-majorelle-blue);
+}
+
+.desti-card :is(.card-rating,.span){
+    display: flex;
+    align-items: center;
+}
+.desti-card.card-rating{
+    margin-block-start: 10px;
+    gap: 10px;
+}
+.desti-card.card-rating.span{
+    background-color: var(--bg-sunglow-alpha-10);
+    gap: 5px;
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+}
+
+.desti-card.card-rating ion-icon{
+    color: var(--text-sunglow);
+}
+
+.desti.btn{
+    margin-inline: auto;
+    margin-block-start: 40px;
+}
+
+
+/* #EXPERIENCE */
+
+.exp.container{
+    display: grid;
+    gap: 50px;
+}
+.exp-banner{
+    position: relative;
+}
+.exp.section-text{
+    margin-block-end: 20px;
+}
+.exp-item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-block-start: 15px;
+}
+
+.exp-item.item-title{
+    color: var(--text-majorelle-blue);
+    font-size: 3.6rem;
+    /*
+    rem stands for "root em", and it's a relative unit in CSS used for defining font sizes
+
+    By default, the font size of the root element (<html>) is typically 16px in most browsers.
+    So, 1rem = 16px by default.
+ */
+    font-weight: var(--weight-bold);
+}
+.exp-shape{
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    /* left: -10px;, it will shift 10 pixels to the left of where it would normally be. */
+    width: 25%;
+    filter: drop-shadow(var(--shadow-4));
+    /* In CSS, the filter property allows you to apply graphical effects like blurring, color shifting, or shadows to an element.
+    
+    drop-shadow(): This function creates a shadow effect similar to box-shadow, but it can be applied to an image or any other element with transparency. It is often used to create a shadow around an element.*/
+}
+
+
+/* #GALLERY */
+
+/* #CTA */

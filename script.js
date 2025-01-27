@@ -5,4 +5,4 @@ window.addEventListener("load",()=>{
     preloader.classList.add("remove");a
 });
 
-//start from 24:20m
+//start from 1:28:00
