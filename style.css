@@ -615,5 +615,15 @@ The CSS property position: relative; allows you to move an element relative to i
 
 
 /* #GALLERY */
+.gallery.section-title{
+    margin-block-end: 40px;
+}
+.gallery-list{
+    display: grid;
+    gap: 15px;
+}
+.gallery.item-banner{
+    border-radius: var(--radius-30);
+}
 
 /* #CTA */
