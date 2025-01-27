@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!--  192.168.29.99:5500 //to view in phone connected to same hotspot as the laptop -->
     <meta charset="UTF-8">
@@ -12,25 +13,40 @@
     <meta name="desctiption" content="This is a travel HTML template made by Shakti Priya">
 
     <!-- favicon -->
-     <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
-     <!-- google font link -->
-     <head>
+    <!-- google font link -->
+
+    <head>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-      </head>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+    </head>
 
-      <!-- custom css file -->
-       <link rel="stylesheet" href="style.css">
+    <!-- custom css file -->
+    <link rel="stylesheet" href="style.css">
 
-       <!-- preload images -->
+    <!-- preload images -->
+     <link rel="preload" as="image" href="./images/hero-banner.png">
+     <link rel="preload" as="image" href="./images/preloader.svg">
+     <!-- 
+     The <link> tag in HTML is used to define a relationship between the current document and an external resource.
+
+     The browser encounters this <link> tag early in the HTML file.
+
+     Here, preload tells the browser to fetch the resource (in this case, the image) as soon as possible, so it’s ready when the page needs it.
       
+     as="image": Indicates the type of resource being preloaded.
+     
+     href="./images/hero-banner.png": Specifies the URL of the resource to preload.-->
+
 </head>
+
 <body>
-    
+
     <!-- #PRELOADER -->
-     <!-- The data- prefix is a way to define custom attributes that you can access via JavaScript. -->
+    <!-- The data- prefix is a way to define custom attributes that you can access via JavaScript. -->
     <div class="preloader" data-preloader>
         <div class="preloader-inner">
             <img src="./images/preloader.svg" width="50" height="50" alt="" class="img">
@@ -38,12 +54,126 @@
     </div>
 
 
+    <!-- HEADER -->
+    <header class="header active" data-header>
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="./images/preloader.svg" width="187" height="38" alt="logo">
+            </a>
+
+            <nav class="navbar" data-navbar>
+                <div class="navbar-top">
+                    <a href="" class="logo">
+                        <img src="./images/preloader.svg" width="187" height="38" alt="logo">
+                    </a>
+
+                    <button class="nav-toggle-btn" aria-label="close menu data-nav-toggler"></button>
+                </div>
+
+                <ul class="navbar-list">
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link">Home</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link">About</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link">Services</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link">Pricing</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link">Contact</a>
+                    </li>
+                </ul>
+
+                <div class="header-action">
+                    <a href="#" class="login-btn">Login</a>
+                    <a href="#" class="btn btn-primary">Sign Up</a>
+                </div>
+            </nav>
+
+            <button class="nav-toggle-btn" aria-label="open menu" data-nav-toggler>
+                <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+                <!-- /*
+                ioni-icon ek website ha jisse icons can be taken
+
+                Iska matlab hai ki ye icon screen readers (jo visually impaired log use karte hain) ke liye chhupa hua
+                hai.
+                Ye tab use hota hai jab icon sirf decoration ke liye ho, aur uska kaam text ya kuch aur explain kar raha
+                ho.
+                Agar icon ka koi important meaning ho, to ye mat lagana. Uske badle, ek label (jaise aria-label="Menu
+                open karein") use karo.
+                */ -->
+            </button>
+            <div class="overlay" data-ovelay data-nav-toggler></div>
+        </div>
+    </header>
+    <!-- The <main> tag is used to represent the main content of a webpage.It excludes content like headers, footers, navigation bars, or sidebars.
+    
+    The <article> tag is used to represent self-contained content that can be independently distributed or reused.-->
+    <main>
+        <article>
+
+            <!-- HERO -->
+            <section class="section hero has-bg-image" aria-label="hero"
+                style="background-image: url(./images/hero-bg.jpg);">
+
+                <div class="conatiner">
+                    <div class="hero-content">
+                        <p class="hero-subtitle">
+                            Explore the World <img src="./images/title-icon.svg" width="20" height="20" alt="World icon"
+                                class="img">
+                        </p>
+
+                        <h1 class="h1 title hero-title">
+                            It's a Big World Out There, Go Explore!
+                        </h1>
+
+                        <p class="hero-text">
+                            We always make our customer
+                            happy by providing as many
+                            choices as possible
+
+                        </p>
+
+                        <div class="wrapper">
+                            <a href="#" class="btn btn-secondary">
+                                <span class="span">
+                                    Plan a trip
+                                </span>
+                                <ion-icon name="chevron-forward" aria-hidden="true"></ion-icon>
+
+                            </a>
+                            <button class="hero-btn">
+                                <div class="btn-img">
+                                    <img src="./images/hero-button-img.jpg" width="100" height="100" alt="our story" class="img-cover">
+
+                                    <ion-icon name="play" aria-hidden="true"></ion-icon>
+
+                                </div>
+                                <p class="text">Watch our Story</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- The <figure> tag in HTML is used to group self-contained content like images, illustrations, diagrams, or code snippets, along with their captions. It helps to semantically associate the visual or media content with a description or explanation. -->
+                    <figure class="hero-banner">
+                        <img src="./images/hero-banner.png" width="631" height="735" alt="hero banner" class="w-100">
+                    </figure>
+                </div>
+            </section>
+        </article>
+    </main>
+
     <!-- custom js link -->
-     <script src="script.js"></script>
+    <script src="script.js"></script>
 
     <!-- ionicon link -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    
+
 </body>
+
 </html>

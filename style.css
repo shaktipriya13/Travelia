@@ -104,6 +104,13 @@ a{
     text-decoration: none;
 }
 
+img{
+    height: auto;
+    /* The height: auto; in CSS is used to make the height of an element adjust automatically based on its content.
+    
+    When you set an element's height to auto, the browser will calculate the height of the element based on the content inside it. It will grow or shrink to fit the size of its content. */
+}
+
 input,
 button{
     background: none;
@@ -135,6 +142,75 @@ body{
     color:var(--text-granite-gray);
     font-size: var(--fontSize-6);
     line-height: 1.8;
+}
+
+
+/* REUSED STYLE  */
+.container{padding-inline: 16px;}
+
+.btn{
+    height: 50px;
+    color: var(--text-white);
+    padding-inline: 30px;
+    border-radius: var(--radius-pill);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: max-content;
+    transition: var(--transition-1);
+}
+
+.btn-primary {background-color: var(--bg-majorelle-blue);}
+
+.btn-primary:is(:hover,:focus-visible){
+    background-color: var(--bg-ocean-blue);
+    box-shadow: var(--shadow-2);
+}
+/* The :is() pseudo-class is used to group multiple selectors together.It allows you to apply a common style to several different states of an element without having to repeat the same rules.
+
+For example, when a user hovers over the .btn-primary button, the styles inside the rule will apply (like changing color or adding a shadow).
+
+The :focus-visible pseudo-class is used to apply styles when an element is focused (usually with keyboard navigation) and it should be visible.e.g., when the user navigates using a keyboard, not when clicking with the mouse*/
+
+.btn-secondary{ background-color: var(--bg-red-salsa);}
+.btn-secondary:is(:hover,:focus-visible){
+    background-color: var(--bg-english-vermilion);
+    box-shadow: var(--shadow-3);
+}
+
+.section {padding-block-end: var(--section-spacing);}
+.has-bg-image{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.title{
+    color: var(--text-gunmetal);
+    font-weight: var(--weight-semiBold);
+    line-height: 1.45;
+}
+
+.h1{
+    font-size: var(--fontSize-1);
+    line-height: 1.2;
+}
+.h2{
+    font-size: var(--fontSize-2);
+    
+}
+.h3{
+    font-size: var(--fontSize-4);
+}
+.img-cover{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-2);
+}
+
+.w-100{
+    width: 100%;
 }
 
 /*  PRELOADER  */
@@ -195,3 +271,130 @@ Lower z-index = Element appears behind.
     0% {width: 40%;}
     100% {width: 80%;}
 }
+
+
+/* HEADER */
+
+.overlay {display: none;}
+
+.header.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header{
+    padding-block: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+}
+
+.header.active{
+    position: fixed;
+    background-color: var(--bg-white);
+    box-shadow: var(--shadow-1);
+    animation: slideIn 500ms ease forwards;
+}
+
+@keyframes slideIn{
+    0% {transform: translateY(-100%);}
+    100% {transform: translateY(0);}
+}
+/*
+@keyframes is used to define an animation sequence in CSS.
+The slideIn is the name of the animation.
+Inside @keyframes, you specify how an element should change its style over time.
+*/
+
+.header .logo img {width: 160px;}
+
+.nav-toggle-btn {font-size: 3.2rem;}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    right: -350px;
+    max-width: 350px;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-white);
+    padding: 30px 16px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    transition: 400ms var(--cubic-out);
+    visibility: hidden;
+}
+
+
+
+
+
+/* HERO */
+.hero{
+    padding-block-start: 150px;
+}
+.hero.container{
+    display: grid;
+    gap: 50px;
+}
+.hero-subtitle{
+    background-color: var(--bg-misty-rose);
+    color: var(--text-light-coral);
+    font-size: var(--fontSize-7);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: max-content;
+    padding: 8px 20px;
+    border-radius: var(--radius-pill);
+}
+
+.hero-title{
+    margin-block: 20px;
+}
+.hero-text{
+    margin-block-end: 30px;
+}
+
+.hero.btn-secondary{
+    margin-block-end: 20px;
+
+}
+.hero-btn {
+    color: var(--text-gunmetal);
+    font-weight: var(--weight-medium);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    transition: var(--transition-1);
+  }
+  
+  .hero-btn .btn-img {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background-color: var(--bg-gainsboro);
+    border-radius: var(--radius-circle);
+    box-shadow: var(--shadow-1);
+  }
+.hero-btn.img-cover{border-radius: inherit;}
+
+.hero-btn ion-icon {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    background-color: var(--bg-white);
+    padding: 10px;
+    border-radius: var(--radius-circle);
+    box-shadow: var(--shadow-1);
+  }
+  
+  .hero-btn:is(:hover, :focus-visible) {
+    color: var(--text-majorelle-blue);
+  }
+  
