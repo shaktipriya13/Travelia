@@ -642,3 +642,109 @@ The CSS property position: relative; allows you to move an element relative to i
 }
 
 /* FOOTER */
+.footer-top{
+    display: grid;
+    /* Simplifies layout creation compared to older techniques like floats or flexbox. */
+    gap: 40px;
+    padding-block: 60px;
+}
+.footer.logo img{width: 180px;}
+.footer-brand.footer-text{margin-block: 20px;}
+
+.social-list{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.social-link{
+    color: var(--text-majorelle-blue);
+    font-style: 2rem;
+    padding: 10px;
+    border-radius: var(--radius-pill);
+    transition: var(--transition-1);
+}
+.social-link:is(:hover, :focus-visible){
+    background-color: var(--bg-majorelle-blue);
+    color: var(--text-white);
+}
+.footer-list-title{ 
+    color: var(--text-gunmetal);
+    font-size: var(--fontSize-5);
+    font-weight: var(--weight-semiBold);
+    margin-block-end: 15px;
+}
+.footer-link{
+    margin-block-start: 10px;
+}
+.footer-link:is(:hover, :focus-visible){
+    text-decoration: underline;
+}
+.footer-list.footer-text{
+    margin-block-end: 15px;
+}
+
+.input-field{
+    height: 55px;
+    padding-inline: 25px 60px;
+    border: 1px solid var(--bg-gainsboro);
+    border-radius: var(--radius-pill);
+    color: var(--text-gunmetal);
+}
+.input-wrapper{
+    position: relative;
+}
+.input-field:focus{
+    border-color: var(--bg-majorelle-blue);
+}
+.input-btn{
+    width: 45px;
+    height: 45px;
+    background-color: var(--bg-majorelle-blue);
+    font-size: 2rem;
+    display: grid;
+    place-items: center;
+    border-radius: var(--radius-circle);
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    transition: var(--transition-1);
+    color: var(--text-white);
+}
+
+.input-btn ion-icon{
+    transform: translateX(-2px) rotate(45deg);
+}
+/* Space ( ) between selectors: Selects ion-icon elements inside elements with the input-btn class. */
+
+.input-btn:is(:hover,:focus-visible){
+    background-color: var(--bg-ocean-blue);
+}
+.footer-bottom{
+    padding-block: 30px;
+    border-block-start: 1px solid var(--border-gainsboro);
+}
+.copyright{
+    margin-block-end: 20px;
+}
+.copyright-link{
+    display: inline-block;
+    /* The display: inline-block; property in CSS allows an element to behave like both an inline element and a block element.
+    
+    How It Works:
+    -> Inline Characteristics:
+    -> It does not start on a new line; elements sit next to each other, just like inline elements (<span>, <a>, etc.).
+
+    -> Block Characteristics:
+    -> You can set dimensions (width, height, padding, margin, etc.), unlike standard inline elements.*/
+    color: var(--text-majorelle-blue);
+    font-weight: var(--weight-medium);
+}
+
+.footer-bottom-link:is(:hover,:focus-visible){
+    text-decoration: underline;
+}
+
+
+
+/* #MEDIA QUERIES */
