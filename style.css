@@ -627,3 +627,18 @@ The CSS property position: relative; allows you to move an element relative to i
 }
 
 /* #CTA */
+.cta-card{
+    background-color: var(--bg-misty-rose);
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: var(--radius-30);
+}
+.cta.section-title.img{display: inline-block;}
+.cta.section-title{margin-block: 0 20px;}
+
+.cta.btn{
+    margin-inline: auto;
+    margin-block-start: 20px;
+}
+
+/* FOOTER */
