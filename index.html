@@ -55,24 +55,28 @@
 
 
     <!-- HEADER -->
-    <header class="header active" data-header>
+    <header class="header" data-header>
         <div class="container">
             <a href="#" class="logo">
-                <img src="./images/preloader.svg" width="187" height="38" alt="logo">
+                <img src="./images/logo.svg" width="187" height="38" alt="logo">
             </a>
 
             <nav class="navbar" data-navbar>
                 <div class="navbar-top">
                     <a href="" class="logo">
-                        <img src="./images/preloader.svg" width="187" height="38" alt="logo">
+                        <img src="./images/logo.svg" width="187" height="38" alt="logo">
                     </a>
 
-                    <button class="nav-toggle-btn" aria-label="close menu data-nav-toggler"></button>
+                    <button class="nav-toggle-btn" aria-label="close menu data-nav-toggler">
+                        <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+
+                    </button>
                 </div>
 
                 <ul class="navbar-list">
                     <li class="navbar-item">
-                        <a href="#" class="navbar-link">Home</a>
+                        <a href="#" class="navbar-link active">Home</a>
+                        <!-- home is active by default -->
                     </li>
                     <li class="navbar-item">
                         <a href="#" class="navbar-link">About</a>

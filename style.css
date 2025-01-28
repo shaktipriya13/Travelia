@@ -154,13 +154,25 @@ body {
     color: var(--text-granite-gray);
     font-size: var(--fontSize-6);
     line-height: 1.8;
+    height: 300vh;
+    /* heigt 300 vh gives a vertical scrollbar */
+    /*  300vh means the element will have a height three times the height of the viewport. */
 }
+
+body.nav-active{
+    overflow: hidden;
+}
+
 
 
 /* REUSED STYLE  */
 .container {
     padding-inline: 16px;
+    /* This applies padding to the left and right of the element, but it adapts if the content direction changes (like for languages with right-to-left text, e.g., Arabic).
+ */
 }
+
+  
 
 .btn {
     height: 50px;
@@ -337,9 +349,7 @@ Lower z-index = Element appears behind.
 
 /* HEADER */
 
-.overlay {
-    display: none;
-}
+
 
 .header.container {
     display: flex;
@@ -403,8 +413,87 @@ Inside @keyframes, you specify how an element should change its style over time.
     visibility: hidden;
 }
 
+.navbar.active{
+    transform: translateX(-350px);
+    transition-duration: 500ms;
+    visibility: visible;
+}
+.navbar-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-list{
+    margin-block-start: 50px;
+}
+.navbar-link{
+    position: relative;
+    color: var(--text-gunmetal);
+    font-size: var(--fontSize-7);
+    font-weight: var(--weight-medium);
+    padding-block: 8px;
+    transform: var(--transition-1);
+}
+.navbar-link::before{
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 10px;
+    background-color: var(--bg-majorelle-blue);
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
+    border-radius: 5px;
+    opacity: 0;
+    transition: var(--transition-1);
+    /* What Happens in the above Given CSS?
+   -> Pseudo-element ::before will appear before the .navbar-link.
+   -> It will be a small, blue rectangle (width: 3px; height: 10px; background-color: var(--bg-majorelle-blue);).
+   -> The rectangle will be positioned absolutely, and centered vertically relative to the .navbar-link (top: 50%; transform: translateY(-50%);).
+   -> Initial opacity is 0, making it invisible by default.
+   -> When hovered or interacted with, it will likely become visible and have some transition effect (based on transition: var(--transition-1);).
+    */
+}
+
+.navbar-link:is(:hover,:focus-visible,.active)::before{opacity: 1;}
+.navbar-link:is(:hover,:focus-visible,.active){
+    transform: translateX(10px);
+    /* adds transition effect to text when hovered */
+}
+.header-action{
+    margin-block-start: auto;
+    padding-block-start: 20px;
+    border-block-start: 1px solid var(--border-gainsboro);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.login-btn{
+    color: var(--text-gunmetal);
+    font-size: var(--fontSize-7);
+    font-weight: var(--weight-medium);
+    transform: var(--transition-1);
+}
+.login-btn:is(:hover:focus-visible){
+    opacity: 0.8;
+}
 
 
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--bg-white);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-1);
+}
+.overlay.active{
+    visibility: visible;
+    opacity: 0.5;
+}
 
 
 /* HERO */
