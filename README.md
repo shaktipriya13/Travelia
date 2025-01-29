@@ -2,7 +2,7 @@
 
 **Travelia** is a fully responsive website crafted using  **HTML** ,  **CSS** , and  **JavaScript** , designed to look great on any device.
 
-### 🚀 [Live Demo](https://chatgpt.com/c/679a4fb1-a9a8-8010-94a6-7575a5e5f7c3#)
+### 🚀 [Live Demo](https://travelia-tours-shaktip.netlify.app/)
 
 ---
 
